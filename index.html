@@ -1,11 +1,1016 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AECQS Research | Izaiah Cottle</title>
-<meta name="description" content="AECQS historical simulated futures research results and research priorities."><link rel="canonical" href="https://ascendaenterprisecapital.com/IzaiahCottle/aecqs/"><link rel="stylesheet" href="../assets/style.css"></head><body><div class="nav"><div class="wrap"><a class="brand" href="../index.html">IZAIAH COTTLE</a><nav><a href="../aecqs/">AECQS</a><a href="../profiles/">Sources & Profiles</a><a href="https://ascendaenterprisecapital.com/">AEC</a></nav></div></div>
-<main class="wrap"><section class="hero"><div class="eyebrow">AEC QUANTITATIVE SYSTEM</div><h1>AECQS Research</h1><p class="lead">AECQS is a proprietary systematic futures research platform developed by Izaiah Cottle through Ascenda Enterprise Capital.</p></section>
-<section><h2>Historical research results</h2><table><thead><tr><th>Market</th><th>Raw net P&amp;L</th><th>Trades</th><th>Win rate</th><th>Profit factor</th><th>Max DD</th></tr></thead><tbody>
-<tr><td>NQ</td><td>+$24,986,733.43</td><td>20,736</td><td>56.13%</td><td>1.752</td><td>-$229,889.94</td></tr>
-<tr><td>ES</td><td>+$4,673,845.44</td><td>13,875</td><td>50.49%</td><td>1.292</td><td>-$120,141.61</td></tr>
-<tr><td>YM</td><td>+$1,988,403.45</td><td>18,706</td><td>45.47%</td><td>1.121</td><td>-$381,241.54</td></tr></tbody></table>
-<p><b>Aggregate:</b> +$31,648,982.32 raw historical simulated/backtest net P&amp;L across 53,317 historical trades.</p>
-<p class="notice"><b>Important:</b> Historical simulated/backtest research only—not audited live trading performance, investor returns, or a guarantee of future results. No combined win rate, combined profit factor or synchronized portfolio drawdown is asserted.</p></section>
-<section><h2>Research priorities</h2><div class="grid"><div class="card"><h3>Validation</h3><p class="muted">Out-of-sample testing, leakage prevention, sensitivity analysis and overfitting controls.</p></div><div class="card"><h3>Execution</h3><p class="muted">Transaction costs, slippage, liquidity assumptions and research-to-production differences.</p></div><div class="card"><h3>Risk</h3><p class="muted">Drawdowns, regime dependence, portfolio interactions and failure-mode analysis.</p></div></div></section></main>
-<footer><div class="wrap">AECQS · Historical research information.</div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>AECQS Research | Izaiah Cottle</title>
+
+<meta
+  name="description"
+  content="AECQS is a proprietary systematic futures research platform developed by Izaiah Cottle through Ascenda Enterprise Capital."
+>
+
+<link
+  rel="canonical"
+  href="https://ascendaenterprisecapital.com/IzaiahCottle/aecqs/"
+>
+
+<style>
+:root {
+  --bg: #050607;
+  --panel: #0c0e10;
+  --panel2: #111315;
+  --text: #f4f4f2;
+  --muted: #a6a8aa;
+  --line: #292d30;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 70% 8%,
+      #151719 0,
+      #08090a 30%,
+      var(--bg) 62%
+    );
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  width: min(1180px, calc(100% - 44px));
+  margin: auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  background: rgba(5, 6, 7, 0.94);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+.brand {
+  text-decoration: none;
+}
+
+.brand strong {
+  display: block;
+
+  font-family: Georgia, serif;
+  font-size: 30px;
+
+  letter-spacing: 0.12em;
+  line-height: 0.9;
+}
+
+.brand span {
+  font-size: 8px;
+
+  letter-spacing: 0.24em;
+  color: #aaa;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c7c7c7;
+
+  font-size: 14px;
+}
+
+nav a.active {
+  color: #fff;
+  font-weight: 700;
+
+  border-bottom: 2px solid #fff;
+
+  padding: 27px 0 25px;
+}
+
+.cta {
+  border: 1px solid #aaa;
+
+  padding: 11px 18px;
+
+  border-radius: 5px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 320px;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid var(--line);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Abstract monochrome chart lines */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  right: -80px;
+  top: 30px;
+
+  width: 50%;
+  height: 220px;
+
+  opacity: 0.35;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0 45%,
+      #555 45.3% 45.8%,
+      transparent 46% 53%,
+      #777 53.2% 53.7%,
+      transparent 54% 62%,
+      #444 62.2% 62.7%,
+      transparent 63%
+    );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+
+  padding: 55px 0;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+
+  color: #bcbcbc;
+
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+
+  font-size: clamp(48px, 6vw, 76px);
+
+  line-height: 1;
+
+  margin: 14px 0;
+
+  letter-spacing: -0.035em;
+}
+
+.hero h1 span {
+  color: #8d8f91;
+  font-weight: 400;
+}
+
+.lead {
+  max-width: 720px;
+
+  color: #c8c9ca;
+
+  font-size: 17px;
+}
+
+.pill-row {
+  display: flex;
+
+  gap: 36px;
+
+  margin-top: 30px;
+
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  color: #d0d0d0;
+
+  font-size: 11px;
+
+  letter-spacing: 0.17em;
+
+  font-weight: 700;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid #34383b;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+  padding: 38px 0 64px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  line-height: 1.1;
+
+  margin: 0 0 5px;
+}
+
+.sub {
+  color: var(--muted);
+
+  margin: 0 0 20px;
+}
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2.25fr)
+    minmax(280px, 0.9fr);
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+.tablebox,
+.summary,
+.card {
+  border: 1px solid #303437;
+
+  background:
+    linear-gradient(
+      145deg,
+      #101214,
+      #090a0b
+    );
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 10px;
+
+  letter-spacing: 0.18em;
+
+  color: #b8b9ba;
+
+  text-align: left;
+
+  background: #151719;
+
+  padding: 14px 17px;
+}
+
+td {
+  padding: 16px 17px;
+
+  border-top: 1px solid #24282a;
+
+  font-size: 14px;
+}
+
+td:first-child {
+  font-weight: 800;
+}
+
+.aggregate td {
+  font-weight: 800;
+
+  background: #151515;
+}
+
+/* =========================
+   SUMMARY CARD
+========================= */
+
+.summary {
+  padding: 24px;
+}
+
+.label {
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: #b6b7b8;
+
+  font-weight: 700;
+}
+
+.big {
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  margin: 10px 0 2px;
+}
+
+.summary hr {
+  border: 0;
+
+  border-top: 1px solid #2d3032;
+
+  margin: 22px 0;
+}
+
+.notice {
+  display: grid;
+
+  grid-template-columns: 36px 1fr;
+
+  gap: 12px;
+
+  color: #b9bbbc;
+
+  font-size: 13px;
+}
+
+.notice .info {
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #555;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  font-family: Georgia, serif;
+
+  font-weight: bold;
+
+  color: #fff;
+}
+
+/* =========================
+   RESEARCH PRIORITIES
+========================= */
+
+.priorities {
+  margin-top: 42px;
+}
+
+.cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+
+  margin-top: 20px;
+}
+
+.card {
+  padding: 22px;
+}
+
+.cardtop {
+  display: flex;
+
+  gap: 13px;
+
+  align-items: center;
+}
+
+.card h3 {
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+
+  margin: 0;
+}
+
+.card p {
+  color: #aeb0b1;
+
+  font-size: 13px;
+
+  margin: 10px 0 0 51px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  border-top: 1px solid var(--line);
+
+  padding: 25px 0 38px;
+
+  color: #777;
+
+  font-size: 10px;
+
+  letter-spacing: 0.14em;
+}
+
+.foot {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.motto {
+  color: #aaa;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+  nav {
+    display: none;
+  }
+
+  .results {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  .tablebox {
+    overflow: auto;
+  }
+
+  .big {
+    font-size: 32px;
+  }
+
+  .foot {
+    display: block;
+  }
+
+  .motto {
+    margin-top: 10px;
+  }
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AECQS Research",
+  "about": {
+    "@type": "Thing",
+    "name": "AECQS — AEC Quantitative System"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Izaiah Cottle",
+    "url": "https://ascendaenterprisecapital.com/Izaiah-Cottle/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ascenda Enterprise Capital",
+    "url": "https://ascendaenterprisecapital.com/"
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- ======================
+     NAVIGATION
+======================= -->
+
+<header>
+
+<div class="wrap nav">
+
+<a
+  class="brand"
+  href="https://ascendaenterprisecapital.com/"
+>
+  <strong>AEC</strong>
+  <span>ASCENDA ENTERPRISE CAPITAL</span>
+</a>
+
+<nav>
+
+<a href="https://ascendaenterprisecapital.com/">
+  Home
+</a>
+
+<a href="https://ascendaenterprisecapital.com/IzaiahCottle/">
+  Izaiah Cottle
+</a>
+
+<a
+  class="active"
+  href="https://ascendaenterprisecapital.com/IzaiahCottle/aecqs/"
+>
+  AECQS
+</a>
+
+<a href="https://ascendaenterprisecapital.com/IzaiahCottle/profiles/">
+  Sources &amp; Profiles
+</a>
+
+</nav>
+
+<a
+  class="cta"
+  href="https://ascendaenterprisecapital.com/"
+>
+  VIEW AEC →
+</a>
+
+</div>
+
+</header>
+
+
+<!-- ======================
+     HERO
+======================= -->
+
+<section class="hero">
+
+<div class="wrap hero-inner">
+
+<div class="eyebrow">
+  AECQS | QUANTITATIVE RESEARCH
+</div>
+
+<h1>
+  AECQS <span>Research</span>
+</h1>
+
+<p class="lead">
+  AECQS is a proprietary systematic futures research platform
+  developed by Izaiah Cottle through Ascenda Enterprise Capital.
+</p>
+
+<div class="pill-row">
+
+<div class="pill">
+
+<span class="icon">▥</span>
+
+<span>
+SYSTEMATIC<br>
+APPROACH
+</span>
+
+</div>
+
+<div class="pill">
+
+<span class="icon">◫</span>
+
+<span>
+DATA-DRIVEN<br>
+RESEARCH
+</span>
+
+</div>
+
+<div class="pill">
+
+<span class="icon">◇</span>
+
+<span>
+RISK-AWARE<br>
+DEVELOPMENT
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================
+     RESULTS
+======================= -->
+
+<main class="wrap">
+
+<section>
+
+<h2>
+Historical Research Results
+</h2>
+
+<p class="sub">
+Historical simulated/backtest research across
+53,317 trades in NQ, ES and YM futures.
+</p>
+
+<div class="results">
+
+
+<!-- TABLE -->
+
+<div class="tablebox">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>MARKET</th>
+<th>RAW NET P&amp;L</th>
+<th>TRADES</th>
+<th>WIN RATE</th>
+<th>PROFIT FACTOR</th>
+<th>MAX DD</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>NQ</td>
+
+<td>
++$24,986,733.43
+</td>
+
+<td>
+20,736
+</td>
+
+<td>
+56.13%
+</td>
+
+<td>
+1.752
+</td>
+
+<td>
+-$229,889.94
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>ES</td>
+
+<td>
++$4,673,845.44
+</td>
+
+<td>
+13,875
+</td>
+
+<td>
+50.49%
+</td>
+
+<td>
+1.292
+</td>
+
+<td>
+-$120,141.61
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>YM</td>
+
+<td>
++$1,988,403.45
+</td>
+
+<td>
+18,706
+</td>
+
+<td>
+45.47%
+</td>
+
+<td>
+1.121
+</td>
+
+<td>
+-$381,241.54
+</td>
+
+</tr>
+
+
+<tr class="aggregate">
+
+<td>
+AGGREGATE
+</td>
+
+<td>
++$31,648,982.32
+</td>
+
+<td>
+53,317
+</td>
+
+<td>
+—
+</td>
+
+<td>
+—
+</td>
+
+<td>
+—
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<aside class="summary">
+
+<div class="label">
+TOTAL HISTORICAL P&amp;L
+</div>
+
+<div class="big">
++$31,648,982.32
+</div>
+
+<div class="sub">
+Across 53,317 historical trades
+</div>
+
+<hr>
+
+<div class="notice">
+
+<div class="info">
+i
+</div>
+
+<div>
+
+<strong style="color:#fff;">
+Important
+</strong>
+
+<br>
+
+Historical simulated/backtest research only —
+not audited live trading performance,
+investor returns,
+or a guarantee of future results.
+
+<br><br>
+
+No combined win rate,
+combined profit factor
+or synchronized portfolio drawdown
+is asserted.
+
+</div>
+
+</div>
+
+</aside>
+
+</div>
+
+</section>
+
+
+<!-- ======================
+     RESEARCH PRIORITIES
+======================= -->
+
+<section class="priorities">
+
+<h2>
+Research Priorities
+</h2>
+
+<p class="sub">
+Key areas of focus for continued development
+and validation.
+</p>
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="cardtop">
+
+<span class="icon">
+▥
+</span>
+
+<h3>
+Validation
+</h3>
+
+</div>
+
+<p>
+Out-of-sample testing,
+leakage prevention,
+sensitivity analysis
+and overfitting controls.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="cardtop">
+
+<span class="icon">
+⚙
+</span>
+
+<h3>
+Execution
+</h3>
+
+</div>
+
+<p>
+Transaction costs,
+slippage,
+liquidity assumptions
+and research-to-production differences.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="cardtop">
+
+<span class="icon">
+◇
+</span>
+
+<h3>
+Risk
+</h3>
+
+</div>
+
+<p>
+Drawdowns,
+regime dependence,
+portfolio interactions
+and failure-mode analysis.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ======================
+     FOOTER
+======================= -->
+
+<footer>
+
+<div class="wrap foot">
+
+<span>
+AECQS · HISTORICAL RESEARCH INFORMATION.
+</span>
+
+<span class="motto">
+BUILT ON DISCIPLINE. DRIVEN BY DATA.
+</span>
+
+</div>
+
+</footer>
+
+</body>
+</html>
