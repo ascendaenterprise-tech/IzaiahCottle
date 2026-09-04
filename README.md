@@ -1,19 +1,11 @@
 # Izaiah Cottle — Quantitative Research
 
-Public research/profile repository for **Izaiah Cottle**, Founder & CEO of **Ascenda Enterprise Capital (AEC)** and developer of **AECQS (AEC Quantitative System)**.
+First-party professional and research site for **Izaiah Cottle**, Founder & CEO of **Ascenda Enterprise Capital**, and developer of **AECQS**.
 
-AECQS is a proprietary systematic futures research platform. The reported historical configuration covers NQ, ES and YM and reports **+$31,648,982.32** aggregate raw historical simulated/backtest net P&L across **53,317 historical trades**.
+## Deployment
+This package is configured for: `https://ascendaenterprisecapital.com/IzaiahCottle/`
 
-> **Disclosure:** Historical simulated/backtest research only—not audited live trading performance, investor returns, or guarantees of future performance.
+Upload the contents of this folder so `index.html`, `assets/`, `aecqs/`, and `profiles/` all sit directly inside the deployed `/IzaiahCottle/` directory.
 
-## Official references
-- https://ascendaenterprisecapital.com/
-- https://ascendaenterprisecapital.com/Izaiah-Cottle/
-- https://ascendaenterprisecapital.com/AEC-Wire/
-
-## Publish with GitHub Pages
-1. Upload these files to the repository root.
-2. Enable GitHub Pages from `main` / root.
-3. Replace `YOUR-GITHUB-USERNAME` in `robots.txt` and `sitemap.xml` with the actual Pages hostname.
-
-This is a first-party resource and should never be represented as independent third-party coverage.
+## Disclosure
+AECQS figures shown on the site are historical simulated/backtest research results—not audited live trading performance, investor returns, or guarantees of future performance.
